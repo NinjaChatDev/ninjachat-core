@@ -7,5 +7,14 @@ public abstract class URIConverter implements IConverter {
      *
      * @return URI.
      */
-    public abstract String getURI();
+    public abstract String getURI(String input);
+
+    /**
+     * Parse the input.
+     * 入力を解析します。
+     *
+     * @param input input string.
+     * @return output string.
+     */
+    public abstract String parse(String input);
 }
