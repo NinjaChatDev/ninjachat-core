@@ -15,6 +15,13 @@ public class GoogleIME extends URIConverter {
 
     protected Gson gson = new Gson();
 
+    /**
+     * Convert the input string using Google IME.
+     * Google IME を使用して入力文字列を変換します。
+     *
+     * @param input input string.
+     * @return output string.
+     */
     @Override
     public String convert(String input) {
         String encoded = URLEncoder.encode(input, StandardCharsets.UTF_8);
@@ -70,6 +77,13 @@ public class GoogleIME extends URIConverter {
         return "https://www.google.com/transliterate?langpair=ja-Hira|ja&text=" + input;
     }
 
+    /**
+     * Extract the result from the JSON string output by Google IME.
+     * Google IME から出力されたJSONの文字列から結果を抽出する
+     *
+     * @param input input string.
+     * @return output string.
+     */
     @Override
     public String parse(String input) {
         StringBuilder sb = new StringBuilder();
